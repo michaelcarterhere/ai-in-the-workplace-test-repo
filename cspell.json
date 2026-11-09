@@ -1,0 +1,19 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "Codespace",
+    "Codespaces",
+    "Copilot",
+    "Lumen",
+    "devcontainer",
+    "markdownlint",
+    "prebuild",
+    "prebuilds"
+  ],
+  "ignorePaths": [
+    ".git/**",
+    "agent-tools/**",
+    "tests/**"
+  ]
+}

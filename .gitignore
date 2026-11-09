@@ -1,0 +1,11 @@
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+id_ed25519
+secrets/
+agent-tools/
+__pycache__/
+*.pyc

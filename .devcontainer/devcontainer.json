@@ -1,0 +1,26 @@
+{
+  // Writing workspace for GitHub Codespaces. Markdown only.
+  // Image index checked on the Microsoft registry on 2026-11-09.
+  // 2.2.5-bookworm and the floating bookworm tag shared this digest that day.
+  // Recheck tags before a cohort:
+  // https://mcr.microsoft.com/v2/devcontainers/base/tags/list
+  // Editor preferences are in .vscode/settings.json so they are not copied here.
+  // GitHub Copilot is intentionally absent from extensions. Installing it here
+  // would not grant a plan, and a later sign-in can enroll Copilot Free.
+  "name": "Research and writing",
+  "image": "mcr.microsoft.com/devcontainers/base:2.2.5-bookworm@sha256:99f5250dd2d5f8b11046d5662dd94c1e3c1dae56b560c7caad5ceb7edf349046",
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "DavidAnson.vscode-markdownlint",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    },
+    "codespaces": {
+      "openFiles": [
+        "START_HERE.md"
+      ]
+    }
+  }
+}
