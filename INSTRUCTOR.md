@@ -1,31 +1,22 @@
 # Instructor notes
 
-This folder is the research-and-writing pilot for Michael Carter, imported into the private GitHub repository `michaelcarterhere/ai-in-the-workplace-test-repo`. Students use [START_HERE.md](START_HERE.md). This page is the remaining GitHub setup, the cost boundaries, and how agent instructions are loaded.
+This folder is the research-and-writing pilot for Michael Carter in the private GitHub template repository `michaelcarterhere/ai-in-the-workplace-test-repo`. Students use [START_HERE.md](START_HERE.md). This page is the GitHub setup, the cost boundaries, and how agent instructions are loaded.
 
 The design record is the approved page [Agentic workspace design (GENE pilot)](https://cursor.com/canvas/store-efcea722-aba4-4bd4-b35f-3a03022c7217/57d9ba4a-3b60-4ebc-b972-b838ad954191). This folder follows it. The design page is not a codespace.
 
-## This repository and the review branch
+## This repository
 
 The earlier authoring copy was a private unpublished Origin draft. An Origin URL cannot open GitHub Codespaces. That draft is not a persistent mirror of this repository. Codespaces needs a repository on github.com.
 
-These files are on the review branch `cursor/import-research-writing-template-c934` of `michaelcarterhere/ai-in-the-workplace-test-repo`. The default branch `main` still contains only the initial placeholder README. Template content was not committed to `main`. No empty commit was added to `main`. The existing initial commit was enough to open a review branch.
+These files are on `main`. On 9 November 2026, after the first review was merged, GitHub reported this repository as private and as a template repository. This change does not alter visibility, collaborators, billing, or that template setting. There is no launch badge.
 
-On 9 November 2026, GitHub reported this repository as private and not a template repository. Leave the template setting off until the review is merged. Marking it as a template before the merge would offer students `main`, which does not contain this folder.
+GitHub documents the codespace side of a template in [Setting up a template repository for GitHub Codespaces](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/setting-up-your-repository/setting-up-a-template-repository-for-github-codespaces).
 
-This import does not merge the review, add collaborators, change visibility, add a payment method, enable a prebuild, or create a codespace. There is no launch badge. A badge would advertise **Use this template** before that action is true.
-
-### Next setup, after you accept the review
-
-Do this only when you want students to create copies. No payment method is required by these instructions. Do these yourself. Nothing in this folder performs them or funds them.
-
-1. Merge the review into `main` when you are satisfied with it. Until that merge, `main` stays the placeholder README.
-2. On that repository, open **Settings**, then **General**, and mark it as a **Template repository**. GitHub documents the codespace side of that choice in [Setting up a template repository for GitHub Codespaces](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/setting-up-your-repository/setting-up-a-template-repository-for-github-codespaces).
-3. Tell each student to choose **Use this template**, create a **private** repository under their own account, and then create a codespace from **their** repository.
-4. Ask them to pick the **2-core** machine when GitHub offers a choice. This `devcontainer.json` does not request a larger machine.
+Tell each student to choose **Use this template**, create a **private** repository under their own account, and then create a codespace from **their** repository. Ask them to pick the **2-core** machine when GitHub offers a choice. This `devcontainer.json` does not request a larger machine.
 
 Students then have independent copies. They are not live co-editors on one shared codespace. A codespace opened directly on the shared template is a poor fit for student work, because those students would be aiming their commits at the same repository.
 
-The repository can stay private for the unpaid-account test. It can later be public so the starter files are easy to copy. Changing visibility is a separate decision and was not done here. The starter files are fictional and contain no student records. Student writing belongs in the private copy.
+The repository stays private. It can later be public so the starter files are easy to copy. Changing visibility is a separate decision and was not done here. The starter files are fictional and contain no student records. Student writing belongs in the private copy.
 
 ### Later: an optional prebuild
 
@@ -47,8 +38,21 @@ Extensions installed when the codespace is created:
 
 - `DavidAnson.vscode-markdownlint` (marketplace version observed 9 November 2026: 0.62.1, not pinned)
 - `streetsidesoftware.code-spell-checker` (observed: 4.10.0, not pinned)
+- `marp-team.marp-vscode` (Marp for VS Code 3.5.2, read from the extension package on 9 November 2026, not pinned)
 
-Versions are not pinned because the codespace installs a build that matches the editor host. A stale version pin can block creation. No Python, Jupyter, or science-stack features are installed.
+Versions are not pinned because the codespace installs a build that matches the editor host. A stale version pin can block creation. No Python, Jupyter, or science-stack features are installed. This folder does not add a separate browser package or a separate Marp CLI install. The extension bundles its own preview. Its export command can still call the CLI that ships inside the extension.
+
+## Slides and Marp settings
+
+Students who want slides edit [slides/slides.md](slides/slides.md). The guide is [slides/README.md](slides/README.md). [AGENTS.md](AGENTS.md) tells the agent to write or edit Markdown Marp files only, and not to install packages or run scripts or exporters unless the student explicitly asks and approves.
+
+Checked against [Marp for VS Code](https://github.com/marp-team/marp-vscode) 3.5.2 on 9 November 2026:
+
+- `markdown.marp.html` defaults to `default`, which enables a selective HTML allowlist in a trusted workspace. `all` allows arbitrary HTML, and the extension description says that can make rendering insecure. This workspace sets `markdown.marp.html` to `off` in [.vscode/settings.json](.vscode/settings.json). In an untrusted workspace the extension already treats HTML as off.
+- The deprecated `markdown.marp.enableHtml` defaults to false and turns on all HTML when true. This workspace does not set it.
+- The preview options in that version keep `script` false. This folder does not add a setting that runs slide scripts.
+- Export to PDF, PowerPoint, and images uses a browser through `markdown.marp.browser` (default `auto`) and can open the file afterward (`markdown.marp.exportAutoOpen` defaults to true). `markdown.marp.openExportedHtmlInIntegratedBrowser` defaults to `off`. This workspace does not set any of those export keys, does not set a browser path, and does not add theme CSS.
+- The same version contributes an `export_marp` language-model tool and an export command. Those are part of the extension. This folder does not turn them on with a setting. The assignment path is the Markdown preview. The agent rule forbids the exporter unless the student explicitly asks and approves.
 
 `GitHub.copilot` is only a workspace recommendation in [.vscode/extensions.json](.vscode/extensions.json). It is not in the auto-install list. On 9 November 2026 the marketplace also listed `GitHub.copilot-chat` 0.48.1. This folder does not recommend that second extension. A visible Copilot icon, if GitHub shows one inside a codespace, is still not an allowance.
 
@@ -83,7 +87,7 @@ Education or student entitlement was not verified for any cohort. The free-accou
 
 ## Acceptance status
 
-[ACCEPTANCE.md](ACCEPTANCE.md) splits **verified static checks** from the **pending free-account browser test**. No credentials for the unpaid account were available during this import. Nobody signed in as that account. A GitHub codespace was not created. A local Docker start of the pinned image is recorded in [tests/STATIC_CHECK_REPORT.md](tests/STATIC_CHECK_REPORT.md). That local start is not the free-account test. The static checker confirms the registry digest and does not itself start the container.
+[ACCEPTANCE.md](ACCEPTANCE.md) records the unpaid-account session Michael reported on 9 November 2026: a Codespace opened, the agent answered, and the agent created a Markdown file in `drafts/`. A request for a slide deck needed several approvals to run scripts. The Marp preview was not part of that session and stays pending. No password for that account is in this folder. A local Docker start from the earlier import is recorded in [tests/STATIC_CHECK_REPORT.md](tests/STATIC_CHECK_REPORT.md). That local start is not the free-account test. The static checker confirms the registry digest and does not itself start the container.
 
 Run the checker from the folder root:
 

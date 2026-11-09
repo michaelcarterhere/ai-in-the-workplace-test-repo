@@ -6,6 +6,7 @@
   "markdown.preview.openMarkdownLinks": "inEditor",
   "markdown.validate.enabled": true,
   "markdown.validate.fileLinks.enabled": "warning",
+  "markdown.marp.html": "off",
   "[markdown]": {
     "editor.wordWrap": "on"
   }

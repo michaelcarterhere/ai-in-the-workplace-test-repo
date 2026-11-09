@@ -45,6 +45,8 @@ REQUIRED_PATHS = [
     "drafts/brief-draft.md",
     "outputs/final-brief.md",
     "reflection/activity-log.md",
+    "slides/README.md",
+    "slides/slides.md",
     "tests/README.md",
     "tests/check_template.py",
 ]
@@ -52,6 +54,7 @@ REQUIRED_PATHS = [
 ALLOWED_DEVCONTAINER_EXTENSIONS = {
     "DavidAnson.vscode-markdownlint",
     "streetsidesoftware.code-spell-checker",
+    "marp-team.marp-vscode",
 }
 ALLOWED_RECOMMENDATIONS = ALLOWED_DEVCONTAINER_EXTENSIONS | {"GitHub.copilot"}
 ALLOWED_UNWANTED = {"ms-python.python", "ms-toolsai.jupyter"}
@@ -200,6 +203,7 @@ def check_required(report: Report) -> None:
         "drafts",
         "outputs",
         "reflection",
+        "slides",
         ".devcontainer",
         ".vscode",
         ".github",
@@ -260,6 +264,24 @@ def check_vscode(report: Report) -> None:
     if isinstance(settings, dict):
         if settings.get("editor.wordWrap") != "on":
             report.fail("workspace settings should enable editor.wordWrap")
+        if settings.get("markdown.marp.html") != "off":
+            report.fail(
+                "markdown.marp.html must be off so Marp does not render HTML"
+            )
+        if settings.get("markdown.marp.enableHtml") not in (None, False):
+            report.fail("deprecated markdown.marp.enableHtml must not be enabled")
+        for key in (
+            "markdown.marp.browser",
+            "markdown.marp.browserPath",
+            "markdown.marp.chromePath",
+            "markdown.marp.exportType",
+            "markdown.marp.exportAutoOpen",
+            "markdown.marp.openExportedHtmlInIntegratedBrowser",
+            "markdown.marp.themes",
+            "markdown.marp.pptx.editable",
+        ):
+            if key in settings:
+                report.fail(f"do not configure Marp export or themes: {key}")
         keys: list[str] = []
         walk_keys(settings, keys)
         for key in keys:
@@ -349,6 +371,20 @@ def check_instructions(report: Report) -> None:
     for bit in required_bits:
         if bit not in agents:
             report.fail(f"AGENTS.md missing required rule text: {bit}")
+    for bit in (
+        "Write or edit Markdown Marp files only",
+        "do not install packages or run scripts or exporters",
+        "unless the student explicitly asks and approves",
+    ):
+        if bit not in agents:
+            report.fail(f"AGENTS.md missing slide rule text: {bit}")
+    if "cursor/import-research-writing-template-c934" in "\n".join(
+        path.read_text(encoding="utf-8") for path in markdown_files()
+    ):
+        report.fail("stale review-branch name is still in a Markdown file")
+    slides = (ROOT / "slides" / "slides.md").read_text(encoding="utf-8")
+    if "marp: true" not in slides or "fictional" not in slides.lower():
+        report.fail("slides/slides.md must be a fictional Marp Markdown deck")
     if "AGENTS.md" not in copilot:
         report.fail("copilot-instructions.md must point at AGENTS.md")
     if "Never fabricate a citation" in copilot:
@@ -503,7 +539,14 @@ def main() -> int:
             print("FAIL", failure)
         return 1
     print("PASS static checks")
-    print("PENDING free-account browser test (not run; no credentials)")
+    print(
+        "REPORTED in ACCEPTANCE.md: unpaid-account Codespace opened, "
+        "agent answered, agent created a Markdown file in drafts/"
+    )
+    print(
+        "PENDING Marp preview, plus quota, trust, plan, and usage lines "
+        "left blank (this command does not sign in)"
+    )
     return 0
 
 

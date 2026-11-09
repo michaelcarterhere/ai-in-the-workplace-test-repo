@@ -7,6 +7,8 @@
   // Editor preferences are in .vscode/settings.json so they are not copied here.
   // GitHub Copilot is intentionally absent from extensions. Installing it here
   // would not grant a plan, and a later sign-in can enroll Copilot Free.
+  // Marp previews Markdown slides. HTML in slides is turned off in
+  // .vscode/settings.json. This file does not install an exporter or a browser.
   "name": "Research and writing",
   "image": "mcr.microsoft.com/devcontainers/base:2.2.5-bookworm@sha256:99f5250dd2d5f8b11046d5662dd94c1e3c1dae56b560c7caad5ceb7edf349046",
   "remoteUser": "vscode",
@@ -14,7 +16,8 @@
     "vscode": {
       "extensions": [
         "DavidAnson.vscode-markdownlint",
-        "streetsidesoftware.code-spell-checker"
+        "streetsidesoftware.code-spell-checker",
+        "marp-team.marp-vscode"
       ]
     },
     "codespaces": {

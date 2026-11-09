@@ -2,6 +2,7 @@
   "recommendations": [
     "DavidAnson.vscode-markdownlint",
     "streetsidesoftware.code-spell-checker",
+    "marp-team.marp-vscode",
     "GitHub.copilot"
   ],
   "unwantedRecommendations": [

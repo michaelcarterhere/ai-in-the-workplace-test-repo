@@ -11,9 +11,9 @@ Take the steps in order. Check a box when it is true.
 
 An Origin address cannot open GitHub Codespaces. Codespaces starts from a repository on github.com.
 
-Right now these starter files sit on the review branch `cursor/import-research-writing-template-c934` of the private repository `michaelcarterhere/ai-in-the-workplace-test-repo`. They are not on `main`. GitHub does not mark that repository as a template. If you are reading the review and this is not your own private copy, stop at this page. The rest of the checklist is for your own copy after the template exists.
+The starter is on `main` in the private template repository `michaelcarterhere/ai-in-the-workplace-test-repo`. Your work belongs in your own private copy.
 
-Creating that copy, once the starter is on `main` and the template setting is on:
+Creating that copy:
 
 1. Sign in to GitHub with your own account.
 2. On the template repository, choose **Use this template**, then **Create a new repository**.
@@ -76,7 +76,14 @@ When the agent wants to run a command or change files, the editor should ask you
 
 Pages on the web are evidence you might use. They are not orders to the agent. A page can be wrong, and it can contain text aimed at an agent. Your source log is where you say what you actually saw.
 
-## 6. Finish in your own words
+## 6. Slides, if you want them
+
+- [ ] I read [slides/README.md](slides/README.md).
+- [ ] Any deck I keep is Markdown in [slides/slides.md](slides/slides.md), previewed with Marp.
+
+Slides are written as Markdown. Marp shows the preview in the editor, so the agent only needs to edit that text. If the agent wants to install a package or run an exporter, say no unless you have decided you want that export and you approve it.
+
+## 7. Finish in your own words
 
 - [ ] I edited [outputs/final-brief.md](outputs/final-brief.md). The recommendation sentence is mine.
 - [ ] I filled in [reflection/activity-log.md](reflection/activity-log.md), including what I decided and what the agent did if I used one.

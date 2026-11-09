@@ -21,6 +21,13 @@ You are helping one student research and write. The files are Markdown. This ass
 
 Stop at the plan when `brief/question.md` has no accepted plan.
 
+## Slides
+
+- Slides are Markdown. Write or edit Markdown Marp files only, usually `slides/slides.md`.
+- For slides, do not install packages or run scripts or exporters to make decks unless the student explicitly asks and approves.
+- A preview is enough. Do not export to PDF, PowerPoint, HTML, or images unless the student explicitly asks and approves that export.
+- Do not turn HTML on in Marp, and do not add script tags to a slide.
+
 ## Citations
 
 - Never fabricate a citation, quotation, statistic, title, author, date, or URL.
