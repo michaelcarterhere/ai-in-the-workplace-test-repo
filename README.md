@@ -8,22 +8,18 @@ When your GitHub account has an agent allowance, one AI agent can help you resea
 
 ## Where these files are
 
-These files are in the private GitHub repository `michaelcarterhere/ai-in-the-workplace-test-repo`. They are on the review branch `cursor/import-research-writing-template-c934`. They are not on the default branch `main`. `main` still has only the repository's initial placeholder README.
+These files are on `main` in the private GitHub template repository `michaelcarterhere/ai-in-the-workplace-test-repo`.
 
-GitHub does not treat this repository as a template repository. That setting stays off until the review is merged. Turning it on earlier would offer `main`, which does not contain this folder. This review does not merge itself, does not change repository settings, and does not create a codespace.
+There is no launch badge in this README. Create your own private repository with **Use this template**, then open a codespace from that copy. Classmates do not edit one shared live document.
 
-There is no launch button here on purpose. A badge would send a student to `main`, or to **Use this template**, before either is ready.
+An Origin address cannot open GitHub Codespaces. The earlier authoring copy was a private unpublished Origin draft. It is not a live mirror of this repository. Codespaces starts from a repository on github.com. Setup notes are in [INSTRUCTOR.md](INSTRUCTOR.md). These files do not turn on billing.
 
-An Origin address cannot open GitHub Codespaces. The earlier authoring copy was a private unpublished Origin draft. It is not a live mirror of this repository. Codespaces starts only from a repository on github.com, and only from a branch that contains these files. The remaining setup is in [INSTRUCTOR.md](INSTRUCTOR.md). These files do not perform it, and it does not turn on billing.
-
-## After this repository is a GitHub template
+## Create your own copy
 
 Each student gets an independent copy. You are not editing a shared live document with classmates.
 
-That path is not available yet. It starts only after the review is merged into `main` and the repository is marked as a template. Neither step is done by these files.
-
 1. Sign in to GitHub in the browser with your own account.
-2. Open the template repository your instructor published on github.com.
+2. Open the template repository `michaelcarterhere/ai-in-the-workplace-test-repo` on github.com.
 3. Choose **Use this template**, then **Create a new repository**.
 4. Make that repository **private**. It belongs to your account.
 5. On your new repository, choose **Code**, then the **Codespaces** tab, then **Create codespace on main**.
@@ -46,6 +42,8 @@ Your private repository is your own copy. Classmates do not edit your files.
 | [drafts/brief-draft.md](drafts/brief-draft.md) | Draft you can change freely |
 | [outputs/final-brief.md](outputs/final-brief.md) | The brief you stand behind |
 | [reflection/activity-log.md](reflection/activity-log.md) | What you decided and what any agent did |
+| [slides/README.md](slides/README.md) | How to preview slides written as Markdown |
+| [slides/slides.md](slides/slides.md) | Starter deck, fictional, ready to replace |
 | [AGENTS.md](AGENTS.md) | Rules for an agent |
 | [.github/copilot-instructions.md](.github/copilot-instructions.md) | Points Copilot at those rules |
 | [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json) | Small preconfigured editor environment |
