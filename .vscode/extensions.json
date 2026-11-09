@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "DavidAnson.vscode-markdownlint",
+    "streetsidesoftware.code-spell-checker",
+    "GitHub.copilot"
+  ],
+  "unwantedRecommendations": [
+    "ms-python.python",
+    "ms-toolsai.jupyter"
+  ]
+}

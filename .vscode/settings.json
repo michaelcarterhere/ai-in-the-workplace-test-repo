@@ -1,0 +1,12 @@
+{
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "markdown.preview.openMarkdownLinks": "inEditor",
+  "markdown.validate.enabled": true,
+  "markdown.validate.fileLinks.enabled": "warning",
+  "[markdown]": {
+    "editor.wordWrap": "on"
+  }
+}
