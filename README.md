@@ -8,11 +8,11 @@ When your GitHub account has an agent allowance, one AI agent can help you resea
 
 ## Where these files are
 
-These files are on `main` in the private GitHub template repository `michaelcarterhere/ai-in-the-workplace-test-repo`.
+These files are on `main` in the public GitHub template repository `michaelcarterhere/ai-in-the-workplace-test-repo`.
 
-There is no launch badge in this README. Create your own private repository with **Use this template**, then open a codespace from that copy. Classmates do not edit one shared live document.
+Make your own copy **private**. Do not add a payment method. There is no launch badge in this README. Create your own private repository with **Use this template**, then open a codespace from that copy. Classmates do not edit one shared live document.
 
-An Origin address cannot open GitHub Codespaces. The earlier authoring copy was a private unpublished Origin draft. It is not a live mirror of this repository. Codespaces starts from a repository on github.com. Setup notes are in [INSTRUCTOR.md](INSTRUCTOR.md). These files do not turn on billing.
+Codespaces starts from your own repository on github.com. Instructor setup is in [instructor/INSTRUCTOR.md](instructor/INSTRUCTOR.md). These files do not turn on billing.
 
 ## Create your own copy
 
@@ -21,7 +21,7 @@ Each student gets an independent copy. You are not editing a shared live documen
 1. Sign in to GitHub in the browser with your own account.
 2. Open the template repository `michaelcarterhere/ai-in-the-workplace-test-repo` on github.com.
 3. Choose **Use this template**, then **Create a new repository**.
-4. Make that repository **private**. It belongs to your account.
+4. Make that repository **private**. It belongs to your account. Do not add a payment method.
 5. On your new repository, choose **Code**, then the **Codespaces** tab, then **Create codespace on main**.
 6. If GitHub asks you to pick a machine, choose the smallest one, usually **2-core**.
 7. Wait for the editor. It is Visual Studio Code in the browser. [START_HERE.md](START_HERE.md) is set to open the first time in that web editor.
@@ -49,7 +49,7 @@ Your private repository is your own copy. Classmates do not edit your files.
 | [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json) | Small preconfigured editor environment |
 | [.vscode/](.vscode/settings.json) | Word wrap and extension suggestions |
 
-The instructor's later setup and the free-account test live in [INSTRUCTOR.md](INSTRUCTOR.md) and [ACCEPTANCE.md](ACCEPTANCE.md).
+Instructor setup is in [instructor/INSTRUCTOR.md](instructor/INSTRUCTOR.md). Students can skip that page.
 
 ## Allowances, in plain language
 

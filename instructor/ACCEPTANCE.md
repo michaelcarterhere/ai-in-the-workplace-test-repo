@@ -1,25 +1,14 @@
-# Free-account acceptance test
+# Free-account acceptance checklist
 
-For Michael Carter, using the separate GitHub account that has **no paid access**. Students who are writing the brief can ignore this file.
+For the instructor, before a cohort uses this public template repository. Students who are writing the brief can ignore this file.
 
-No password is stored here. Do not send the account password to anyone, and do not paste it into the repository. The person who edited this folder for the Marp change did not sign in as that account.
+Do not store a password in this repository. Do not add a payment method, start a paid trial, or click upgrade to finish a check.
 
-Two kinds of result stay separate. Codespaces in section A and Copilot in section B are different checks. A result in one section does not count for the other. The Marp preview is a later check and is still pending.
+Two kinds of result stay separate. Codespaces in section A and Copilot in section B are different checks. A result in one section does not count for the other. The Marp preview in section C is a separate check.
 
-## Verified on the unpaid account
+Slides in this folder are Markdown previewed with Marp. [AGENTS.md](../AGENTS.md) tells the agent not to install packages or run scripts or exporters unless the student explicitly asks and approves.
 
-Michael reported this on 9 November 2026, after the first review was merged and this repository was a template. The account used was the unpaid student account.
-
-- A Codespace opened.
-- The agent answered.
-- The agent created a Markdown file in `drafts/`.
-- When asked for a slide deck, the agent needed several approvals to run scripts.
-
-That report is why slides in this folder are Markdown previewed with Marp, and why [AGENTS.md](AGENTS.md) tells the agent not to install packages or run scripts or exporters unless the student explicitly asks and approves.
-
-The report did not include usage numbers, machine type, trust-dialog wording, the plan name, or which file the agent named when asked for the rules. Those lines in sections A and B stay blank. Education or student Copilot access was not part of the report. Do not mark education as verified.
-
-The Marp preview was not part of that session.
+Education or student Copilot access was not checked when this folder was written. Do not mark education as verified. Do not assume a paid plan is required. Write down the plan name the account pages show.
 
 ## Verified static checks
 
@@ -35,19 +24,15 @@ The command checks JSON and JSONC, the pinned image reference, internal links, t
 
 A passing static check does not mean the free account can provision a codespace or use an agent.
 
-Believe the latest command output. An older written report can go stale after an edit. The report that shipped with the draft only describes the run that produced it.
+Believe the latest command output. An older written report can go stale after an edit. The written report only describes the run that produced it.
 
 Container start is not part of the static check. The command says whether Docker was present and whether the registry digest matched.
 
-## Pending: Michael's free-account browser test
+## Browser check on a free account
 
-The Codespace open and the agent reply are recorded above. This section is what that report left blank, plus the Marp preview, which is still pending.
+The starter is on `main` of the public template repository `michaelcarterhere/ai-in-the-workplace-test-repo`. Codespaces starts from a repository on github.com. Run this check from a **private** copy you create with **Use this template**. Each student makes their own copy private the same way. Do not add a payment method.
 
-The starter is on `main` of the private template repository `michaelcarterhere/ai-in-the-workplace-test-repo`. An Origin URL cannot open Codespaces.
-
-Use a private browser window. Sign in only with the unpaid account. Stop if a page asks for a payment card. Do not add a payment method to finish the test. Do not start a paid trial. Do not click an upgrade button.
-
-Education or student Copilot access was not checked when this folder was written. Do not mark education as verified. Do not assume a paid plan is required. Write down the plan name the account pages show.
+Use a private browser window. Sign in with an account that has no payment method on file. Stop if a page asks for a payment card. Do not add a payment method to finish the test. Do not start a paid trial. Do not click an upgrade button.
 
 Record the date, the exact message, and a pass or a stop for each step.
 
@@ -59,7 +44,7 @@ Do this before any Copilot sign-in.
 2. Open the [Codespaces page](https://github.com/codespaces). Record whether it loads without asking for a card.
 3. On the template repository `michaelcarterhere/ai-in-the-workplace-test-repo`, choose **Use this template** and create a **private** repository owned by this free account.
 4. Create a codespace on that private repository. If a machine list appears, choose **2-core**. Record whether it reaches the editor, the machine type, and any quota or payment message.
-5. Record whether [START_HERE.md](START_HERE.md) opened. That behavior is for the VS Code web client the first time. A desktop window will not match it.
+5. Record whether [START_HERE.md](../START_HERE.md) opened. That behavior is for the VS Code web client the first time. A desktop window will not match it.
 6. Record Workspace Trust exactly as it appeared, including a case where no dialog appeared. Restricted Mode limits agents until the workspace is trusted. The dialog is account-dependent. A missing dialog is a note, not an automatic failure. Command Palette: **Workspaces: Manage Workspace Trust**. See [Workspace Trust](https://code.visualstudio.com/docs/editing/workspaces/workspace-trust).
 7. If a Copilot or **Use AI Features** prompt appears, dismiss it without signing in. [VS Code's Copilot setup](https://code.visualstudio.com/docs/setup/copilot) says signing in with no plan enrolls an eligible account in Copilot Free. That sign-up belongs to section B.
 8. Stop the codespace. After your notes are saved in the private repository, delete the test codespace so storage does not keep accumulating. Deleting does not remove usage already counted this month. Record the usage numbers again. See [included usage](https://docs.github.com/en/codespaces/troubleshooting/troubleshooting-included-usage).
@@ -68,12 +53,12 @@ Do this before any Copilot sign-in.
 
 **Record**
 
-- Date: 9 November 2026 for the reported Codespace open. Usage numbers were not included.
-- Usage before: not reported
-- Provision result: a Codespace opened on the unpaid student account
-- Machine: not reported
-- Trust dialog: not reported
-- Usage after stop and delete: not reported
+- Date:
+- Usage before:
+- Provision result:
+- Machine:
+- Trust dialog:
+- Usage after stop and delete:
 
 ### B. Copilot Free, agent entitlement, and limits
 
@@ -91,19 +76,19 @@ Run this separately from section A. Codespaces success does not imply an agent a
 
 **Record**
 
-- Date: 9 November 2026
-- Plan name shown before any sign-in: not reported
-- Did this test enroll Copilot Free? not reported
-- Agent mode available? The agent answered and created a Markdown file in `drafts/`.
-- Limit message: not reported. A slide-deck request needed several approvals to run scripts.
-- Usage unit and change for the one request: not reported
-- Which file the agent named: not reported
+- Date:
+- Plan name shown before any sign-in:
+- Did this test enroll Copilot Free?
+- Agent mode available?
+- Limit message:
+- Usage unit and change for the one request:
+- Which file the agent named:
 
 ### C. Marp preview
 
-Pending. The session above did not include Marp. After this change is on `main`, create a codespace from a private copy that contains it.
+Create a codespace from a private copy of this public template repository.
 
-1. Open [slides/slides.md](slides/slides.md).
+1. Open [slides/slides.md](../slides/slides.md).
 2. Record whether a Marp preview opens without installing another package and without running an exporter.
 3. Ask the agent to change one slide sentence in that Markdown file and stop. Record whether it edited the file or asked to run a script.
 4. Do not approve an install or an export during this check. The expected path is a Markdown edit.
@@ -129,7 +114,7 @@ The account can still open the codespace and edit the Markdown files. The studen
 
 ## Troubleshooting during the browser test
 
-**Auth.** Other GitHub sessions in the same browser can create the codespace under the wrong account. Use a private window and the unpaid account only. GitHub sign-in for the codespace and Copilot sign-in are different screens. If a permission mentions billing or a payment method, stop and copy the wording into the record.
+**Auth.** Other GitHub sessions in the same browser can create the codespace under the wrong account. Use a private window and the free account only. GitHub sign-in for the codespace and Copilot sign-in are different screens. If a permission mentions billing or a payment method, stop and copy the wording into the record.
 
 **Quota.** A message about included usage, spending limit, or storage means section A needs that message in the record. With no card on file, GitHub blocks use past the included amount. Stopping idle codespaces reduces compute. Deleting unused codespaces slows further storage accumulation and does not refund the current month. Do not enable a prebuild during this test. This repository does not contain one.
 

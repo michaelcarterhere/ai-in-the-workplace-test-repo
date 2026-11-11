@@ -14,8 +14,8 @@ The command exits 0 when the static checks pass. It prints one line when Docker 
 
 What the command does not do:
 
-- It does not sign in as the unpaid test account.
+- It does not sign in to GitHub.
 - It does not prove Codespaces quota or Copilot Free limits.
 - It does not start the container when Docker is missing.
 
-The browser record for that account is [../ACCEPTANCE.md](../ACCEPTANCE.md).
+The browser checklist for a free account is [../instructor/ACCEPTANCE.md](../instructor/ACCEPTANCE.md).
