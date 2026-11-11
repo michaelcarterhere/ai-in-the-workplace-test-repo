@@ -7,21 +7,21 @@ Take the steps in order. Check a box when it is true.
 ## 1. Confirm you are in the right place
 
 - [ ] I opened this file from my own private GitHub repository, inside a codespace.
-- [ ] I did not try to start a codespace from an Origin link.
+- [ ] That repository is my private copy of the public template. I did not add a payment method.
 
-An Origin address cannot open GitHub Codespaces. Codespaces starts from a repository on github.com.
+The starter is on `main` in the public template repository `michaelcarterhere/ai-in-the-workplace-test-repo`. Your work belongs in your own private copy. Do not add a payment method.
 
-The starter is on `main` in the private template repository `michaelcarterhere/ai-in-the-workplace-test-repo`. Your work belongs in your own private copy.
+Codespaces starts from your own repository on github.com.
 
 Creating that copy:
 
 1. Sign in to GitHub with your own account.
-2. On the template repository, choose **Use this template**, then **Create a new repository**.
+2. On the public template repository, choose **Use this template**, then **Create a new repository**.
 3. Choose **Private**.
 4. On that new repository, choose **Code**, then **Codespaces**, then **Create codespace on main**.
 5. If a machine list appears, choose **2-core**.
 
-Your repository is your own copy. It is not a live document shared with classmates.
+Your repository is your own private copy. It is not a live document shared with classmates.
 
 The editor that opens is Visual Studio Code in the browser. This page is set to open the first time you use the **web** editor. The desktop app does not use that setting. If you see a file list and this page is closed, click `START_HERE.md` in the list.
 
@@ -111,4 +111,4 @@ That path is a writing workspace. It is not an agentic experience. An agentic ru
 
 **The agent wants to publish, upload, or delete.** That needs your yes for that specific action. You can say no and keep writing.
 
-Instructor setup and the free-account test record are in [INSTRUCTOR.md](INSTRUCTOR.md) and [ACCEPTANCE.md](ACCEPTANCE.md). You can ignore both while you write.
+Instructor notes are in [instructor/INSTRUCTOR.md](instructor/INSTRUCTOR.md). You can ignore them while you write.

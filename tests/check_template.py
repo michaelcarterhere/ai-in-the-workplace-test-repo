@@ -27,8 +27,8 @@ IMAGE_TAG = "2.2.5-bookworm"
 REQUIRED_PATHS = [
     "README.md",
     "START_HERE.md",
-    "INSTRUCTOR.md",
-    "ACCEPTANCE.md",
+    "instructor/INSTRUCTOR.md",
+    "instructor/ACCEPTANCE.md",
     "AGENTS.md",
     ".github/copilot-instructions.md",
     ".devcontainer/devcontainer.json",
@@ -108,7 +108,6 @@ DOC_URLS = [
     "https://code.visualstudio.com/docs/agents/concepts/trust-and-safety",
     "https://code.visualstudio.com/docs/agents/reference/custom-instructions-reference",
     "https://github.com/features/copilot/plans",
-    "https://cursor.com/canvas/store-efcea722-aba4-4bd4-b35f-3a03022c7217/57d9ba4a-3b60-4ebc-b972-b838ad954191",
 ]
 
 
@@ -204,6 +203,7 @@ def check_required(report: Report) -> None:
         "outputs",
         "reflection",
         "slides",
+        "instructor",
         ".devcontainer",
         ".vscode",
         ".github",
@@ -391,14 +391,14 @@ def check_instructions(report: Report) -> None:
         report.fail("copilot-instructions.md duplicates AGENTS.md rules")
     if len(copilot.split()) > 220:
         report.fail("copilot-instructions.md is long enough to drift from AGENTS.md")
-    for rel in ("README.md", "START_HERE.md", "ACCEPTANCE.md"):
+    for rel in ("README.md", "START_HERE.md", "instructor/ACCEPTANCE.md"):
         text = (ROOT / rel).read_text(encoding="utf-8").lower()
         if "not an agentic experience" not in text:
             report.fail(f"{rel} must describe the no-agent path as not an agentic experience")
-    acceptance = (ROOT / "ACCEPTANCE.md").read_text(encoding="utf-8")
+    acceptance = (ROOT / "instructor" / "ACCEPTANCE.md").read_text(encoding="utf-8")
     for bit in (
         "Verified static checks",
-        "Pending: Michael's free-account browser test",
+        "Browser check on a free account",
         "### A. Codespaces quota and provisioning",
         "### B. Copilot Free, agent entitlement, and limits",
         "payment method",
@@ -406,10 +406,48 @@ def check_instructions(report: Report) -> None:
         "Copilot Free",
     ):
         if bit not in acceptance:
-            report.fail(f"ACCEPTANCE.md missing section text: {bit}")
-    start = (ROOT / "START_HERE.md").read_text(encoding="utf-8")
-    if "Origin address cannot open GitHub Codespaces" not in start:
-        report.fail("START_HERE.md must say an Origin address cannot open Codespaces")
+            report.fail(f"instructor/ACCEPTANCE.md missing section text: {bit}")
+    removed_phrases = (
+        "cursor.com/canvas",
+        "Origin address",
+        "Origin link",
+        "Origin URL",
+        "Origin draft",
+        "private GitHub template",
+        "private template repository",
+    )
+    for path in markdown_files():
+        text = path.read_text(encoding="utf-8")
+        for phrase in removed_phrases:
+            if phrase in text:
+                report.fail(
+                    f"{path.relative_to(ROOT)} still contains removed wording: {phrase}"
+                )
+    for rel in (
+        "README.md",
+        "START_HERE.md",
+        "instructor/INSTRUCTOR.md",
+        "instructor/ACCEPTANCE.md",
+        "tests/STATIC_CHECK_REPORT.md",
+    ):
+        text = (ROOT / rel).read_text(encoding="utf-8")
+        lowered = text.lower()
+        if "public github template" not in lowered and "public template repository" not in lowered:
+            report.fail(f"{rel} must describe a public template repository")
+        private_copy = (
+            "own private" in lowered
+            or "own copy private" in lowered
+            or "copy private" in lowered
+            or "repository **private**" in lowered
+            or "choose **private**" in lowered
+            or "create a **private**" in lowered
+        )
+        if not private_copy:
+            report.fail(f"{rel} must tell students to make their own copy private")
+    for rel in ("README.md", "START_HERE.md"):
+        text = (ROOT / rel).read_text(encoding="utf-8").lower()
+        if "do not add a payment method" not in text:
+            report.fail(f"{rel} must tell students not to add a payment method")
     question = (ROOT / "brief" / "question.md").read_text(encoding="utf-8")
     if "fictional" not in question.lower() or "Lumen Lane" not in question:
         report.fail("brief/question.md must keep the fictional Lumen Lane frame")
@@ -540,12 +578,12 @@ def main() -> int:
         return 1
     print("PASS static checks")
     print(
-        "REPORTED in ACCEPTANCE.md: unpaid-account Codespace opened, "
-        "agent answered, agent created a Markdown file in drafts/"
+        "Template is described as public. Student copies stay private. "
+        "This command does not sign in or change GitHub settings."
     )
     print(
-        "PENDING Marp preview, plus quota, trust, plan, and usage lines "
-        "left blank (this command does not sign in)"
+        "Browser checklist: instructor/ACCEPTANCE.md "
+        "(quota, trust, plan, usage, and Marp preview are not run here)"
     )
     return 0
 
